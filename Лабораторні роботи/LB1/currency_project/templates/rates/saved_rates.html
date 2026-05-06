@@ -1,0 +1,33 @@
+{% extends 'rates/base.html' %}
+
+{% block content %}
+
+<h2>Збережені результати поточного дня</h2>
+
+{% if saved_rates %}
+<table>
+    <thead>
+        <tr>
+            <th>Дата збереження</th>
+            <th>Назва валюти</th>
+            <th>Курс купівлі</th>
+            <th>Курс продажу</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for rate in saved_rates %}
+        <tr>
+            <td>{{ rate.saved_date }}</td>
+            <td>{{ rate.name }}</td>
+            <td>{{ rate.buy_rate }}</td>
+            <td>{{ rate.sell_rate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="empty">Збережених результатів ще немає.</p>
+{% endif %}
+
+{% endblock %}

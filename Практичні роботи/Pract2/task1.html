@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Відображення зображення</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        #imageContainer {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 400px;
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Відображення зображення з JSON</h1>
+
+    <div id="imageContainer">
+        <p>Завантаження зображення...</p>
+    </div>
+
+    <script>
+        fetch("image.json")
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("Помилка завантаження JSON-файлу");
+                }
+
+                return response.text();
+            })
+            .then(function(jsonText) {
+                const data = JSON.parse(jsonText);
+
+                const imageContainer = document.getElementById("imageContainer");
+
+                imageContainer.innerHTML = "";
+
+                const img = document.createElement("img");
+
+                img.src = data.imageUrl;
+                img.alt = data.alt;
+
+                imageContainer.appendChild(img);
+            })
+            .catch(function(error) {
+                const imageContainer = document.getElementById("imageContainer");
+
+                imageContainer.innerHTML = "";
+
+                const errorText = document.createElement("p");
+                errorText.className = "error";
+                errorText.textContent = "Сталася помилка: " + error.message;
+
+                imageContainer.appendChild(errorText);
+            });
+    </script>
+
+</body>
+</html>
