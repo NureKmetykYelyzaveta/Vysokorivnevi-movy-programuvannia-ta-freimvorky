@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from datetime import datetime
 
 # Функція для показу чисел від 1 до 10
 def show_numbers():
@@ -9,6 +10,7 @@ def show_numbers():
         numbers_text += str(i) + "\n"
 
     numbers_label.config(text=numbers_text)
+
 
 # Функція для обчислення середнього значення
 def calculate_average():
@@ -30,9 +32,35 @@ def calculate_average():
         )
 
 
+# Функція для обчислення віку
+def calculate_age():
+    try:
+        birth_year = int(entry_birth_year.get())
+
+        current_year = datetime.now().year
+
+        age = current_year - birth_year
+
+        if birth_year > current_year:
+            messagebox.showerror(
+                "Помилка",
+                "Рік народження не може бути більшим за поточний!"
+            )
+        else:
+            age_result_label.config(
+                text=f"Ваш вік: {age} років"
+            )
+
+    except ValueError:
+        messagebox.showerror(
+            "Помилка",
+            "Будь ласка, введіть коректний рік!"
+        )
+
+
 window = tk.Tk()
 window.title("Практичне заняття №1")
-window.geometry("400x550")
+window.geometry("400x750")
 
 
 # Рівень 1
@@ -113,6 +141,46 @@ result_label = tk.Label(
     font=("Arial", 12)
 )
 result_label.pack(pady=10)
+
+
+# Рівень 3
+
+
+level3_label = tk.Label(
+    window,
+    text="Рівень 3",
+    font=("Arial", 16, "bold")
+)
+level3_label.pack(pady=10)
+
+task3_label = tk.Label(
+    window,
+    text="Обчислення віку користувача"
+)
+task3_label.pack(pady=5)
+
+birth_year_label = tk.Label(
+    window,
+    text="Введіть рік народження:"
+)
+birth_year_label.pack()
+
+entry_birth_year = tk.Entry(window)
+entry_birth_year.pack(pady=5)
+
+age_button = tk.Button(
+    window,
+    text="Обчислити вік",
+    command=calculate_age
+)
+age_button.pack(pady=10)
+
+age_result_label = tk.Label(
+    window,
+    text="Ваш вік:",
+    font=("Arial", 12)
+)
+age_result_label.pack(pady=10)
 
 
 window.mainloop()

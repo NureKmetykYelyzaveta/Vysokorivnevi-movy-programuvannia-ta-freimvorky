@@ -5,109 +5,376 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f2f4f8;
-    color: #222;
+    background: #f3f4f6;
+    color: #111827;
 }
+
+/* =========================
+   GLOBAL
+========================= */
 
 .app {
     min-height: 100vh;
-}
-
-.header {
-    background: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 32px;
-}
-
-.header p {
-    margin-top: 10px;
-    color: #cbd5e1;
-}
-
-.courses-container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-}
-
-.course-card {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
-
-.course-card h2 {
-    margin-top: 0;
-    color: #1f2937;
-}
-
-.description {
-    color: #4b5563;
-    line-height: 1.5;
-}
-
-.enroll-block,
-.review-block,
-.reviews-list {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #e5e7eb;
 }
 
 input,
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    margin: 7px 0;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
+    padding: 12px;
+    margin-top: 10px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
     font-size: 15px;
+
+    background: white;
+    color: #111827;
+
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280;
 }
 
 textarea {
-    min-height: 80px;
     resize: vertical;
+    min-height: 90px;
 }
 
 button {
-    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+
     background: #2563eb;
     color: white;
-    border: none;
-    padding: 11px 18px;
-    border-radius: 7px;
-    cursor: pointer;
+
+    padding: 12px 18px;
+
     font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 button:hover {
     background: #1d4ed8;
 }
 
+/* =========================
+   AUTH
+========================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+}
+
+.auth-card h1 {
+    margin: 0;
+
+    font-size: 52px;
+    line-height: 1.1;
+
+    color: #2563eb;
+}
+
+.auth-card h2 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+
+    font-size: 28px;
+
+    color: #111827;
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.switch-text {
+    margin-top: 20px;
+
+    color: #2563eb;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+.switch-text:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #1f2937;
+
+    color: white;
+
+    padding: 22px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 34px;
+}
+
+.header p {
+    margin-top: 8px;
+
+    color: #cbd5e1;
+}
+
+.user-panel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-panel span {
+    font-size: 18px;
+}
+
+.user-panel button {
+    background: crimson;
+}
+
+.user-panel button:hover {
+    background: #b3002d;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main-layout {
+    width: 95%;
+
+    margin: 30px auto;
+
+    display: flex;
+    gap: 25px;
+
+    align-items: flex-start;
+}
+
+/* =========================
+   COURSES
+========================= */
+
+.courses-container {
+    flex: 3;
+
+    display: grid;
+    gap: 25px;
+}
+
+.course-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.course-card h2 {
+    margin-top: 0;
+
+    color: #2563eb;
+
+    font-size: 32px;
+}
+
+.description {
+    color: #4b5563;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.course-card p {
+    font-size: 18px;
+}
+
+.enroll-block,
+.review-block,
+.reviews-list {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.enroll-block h3,
+.review-block h3,
+.reviews-list h3 {
+    margin-top: 0;
+
+    color: #111827;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
 .review {
+    margin-top: 12px;
+
     background: #f9fafb;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 10px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
     border-left: 4px solid #2563eb;
 }
 
 .review p {
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 .empty {
-    color: #777;
+    color: #6b7280;
     font-style: italic;
+}
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs-panel {
+    flex: 1;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    position: sticky;
+    top: 20px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.programs-panel h2 {
+    margin-top: 0;
+
+    color: #111827;
+}
+
+.program-card {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border-radius: 12px;
+
+    border-left: 4px solid #2563eb;
+}
+
+.program-card h3 {
+    margin-top: 0;
+
+    color: #2563eb;
+}
+
+.program-card p,
+.program-card li {
+    color: #111827;
+}
+
+.program-card ul {
+    padding-left: 20px;
+}
+
+/* =========================
+   RANGE
+========================= */
+
+input[type="range"] {
+    padding: 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .programs-panel {
+        width: 100%;
+
+        position: static;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .course-card h2 {
+        font-size: 26px;
+    }
+
+    .auth-card {
+        padding: 30px 25px;
+    }
+
+    .auth-card h1 {
+        font-size: 42px;
+    }
 }
