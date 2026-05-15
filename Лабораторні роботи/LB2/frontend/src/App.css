@@ -9,9 +9,6 @@ body {
     color: #111827;
 }
 
-/* =========================
-   GLOBAL
-========================= */
 
 .app {
     min-height: 100vh;
@@ -65,9 +62,6 @@ button:hover {
     background: #1d4ed8;
 }
 
-/* =========================
-   AUTH
-========================= */
 
 .auth-page {
     min-height: 100vh;
@@ -131,9 +125,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* =========================
-   HEADER
-========================= */
+
 
 .header {
     background: #1f2937;
@@ -177,9 +169,7 @@ button:hover {
     background: #b3002d;
 }
 
-/* =========================
-   MAIN
-========================= */
+
 
 .main-layout {
     width: 95%;
@@ -192,9 +182,7 @@ button:hover {
     align-items: flex-start;
 }
 
-/* =========================
-   COURSES
-========================= */
+
 
 .courses-container {
     flex: 3;
@@ -251,9 +239,7 @@ button:hover {
     color: #111827;
 }
 
-/* =========================
-   REVIEWS
-========================= */
+
 
 .review {
     margin-top: 12px;
@@ -276,9 +262,7 @@ button:hover {
     font-style: italic;
 }
 
-/* =========================
-   PROGRAMS
-========================= */
+
 
 .programs-panel {
     flex: 1;
@@ -328,17 +312,13 @@ button:hover {
     padding-left: 20px;
 }
 
-/* =========================
-   RANGE
-========================= */
+
 
 input[type="range"] {
     padding: 0;
 }
 
-/* =========================
-   MOBILE
-========================= */
+
 
 @media (max-width: 1000px) {
 
