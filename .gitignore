@@ -1,0 +1,64 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+local.properties
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Android build files
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Generated files
+captures/
+.externalNativeBuild/
+.cxx/
+bin/
+gen/
+
+# Kotlin
+.kotlin/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keystore / signing files
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Google services / secrets
+google-services.json
+secrets.properties
+
+# Proguard generated files
+mapping.txt
+seeds.txt
+usage.txt
+
+# NDK
+obj/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Emulator / screenshots
+*.hprof
